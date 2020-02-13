@@ -13,6 +13,8 @@ public class Infection : MonoBehaviour
     int centralRegion = 3;
     int southernRegion = 4;
 
+    [SerializeField] GameObject buttons;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +32,7 @@ public class Infection : MonoBehaviour
     public void SetNorthernStartingRegion()
     {
         startingRegion = northernRegion;
+        DisableButton();
     }
     public void SetWesternStartingRegion()
     {
@@ -42,6 +45,11 @@ public class Infection : MonoBehaviour
     public void SetSouthernStartingRegion()
     {
         startingRegion = southernRegion;
+    }
+
+    public void DisableButton()
+    {
+        buttons.SetActive(false);
     }
 
 }
