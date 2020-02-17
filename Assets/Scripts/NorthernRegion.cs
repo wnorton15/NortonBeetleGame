@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class NorthernRegion : MonoBehaviour
 {
+    //NORTHERN REGION ID
+    int idnum = 1;
+
     //initialize variables
     bool infected = false;
     int numTreesTotal = 1500000;
@@ -27,5 +30,10 @@ public class NorthernRegion : MonoBehaviour
     {
         infected = true;
         numTreesInfected += 1;
+    }
+
+    public int GetId()
+    {
+        return idnum;
     }
 }

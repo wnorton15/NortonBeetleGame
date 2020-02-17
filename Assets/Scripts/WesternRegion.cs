@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class WesternRegion : MonoBehaviour
 {
+    //WESTERN REGION ID
+    public int idnum = 3;
+
     //initialize variables
     bool infected = false;
     int numTreesTotal = 3500000;
