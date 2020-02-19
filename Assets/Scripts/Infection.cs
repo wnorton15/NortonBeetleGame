@@ -13,6 +13,9 @@ public class Infection : MonoBehaviour
 
     //regions 
     [SerializeField] NorthernRegion northernRegion;
+    [SerializeField] WesternRegion westernRegion;
+    [SerializeField] CentralRegion centralRegion;
+    [SerializeField] SouthernRegion southernRegion;
 
 
     // Start is called before the first frame update
@@ -33,21 +36,25 @@ public class Infection : MonoBehaviour
     public void SetNorthernStartingRegion()
     {
         startingRegion = northernRegion.GetId();
+        InfectRegion(startingRegion);
         DisableStartingRegionButtons();
     }
     public void SetWesternStartingRegion()
     {
-        //startingRegion = westernRegion;
+        startingRegion = westernRegion.GetId();
+        InfectRegion(startingRegion);
         DisableStartingRegionButtons();
     }
     public void SetCentralStartingRegion()
     {
-        //startingRegion = centralRegion;
+        startingRegion = centralRegion.GetId();
+        InfectRegion(startingRegion);
         DisableStartingRegionButtons();
     }
     public void SetSouthernStartingRegion()
     {
-        //startingRegion = southernRegion;
+        startingRegion = southernRegion.GetId();
+        InfectRegion(startingRegion);
         DisableStartingRegionButtons();
     }
 
@@ -65,21 +72,21 @@ public class Infection : MonoBehaviour
     }
 
     //this infects new region 
-    public void infectRegion(int regionId)
+    public void InfectRegion(int regionId)
     {
         switch (regionId)
         {
             case 1:
-                //northernRegionInfected = true;
+                northernRegion.Infect();
                 break;
             case 2:
-                //centralRegionInfected = true;
+                centralRegion.Infect();
                 break;
             case 3:
-                //westernRegionInfected = true;
+                westernRegion.Infect();
                 break;
             case 4:
-                //southernRegionInfected = true;
+                southernRegion.Infect();
                 break;
         }
     }

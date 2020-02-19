@@ -30,4 +30,8 @@ public class CentralRegion : MonoBehaviour
         infected = true;
         numTreesInfected += 1;
     }
+    public int GetId()
+    {
+        return idnum;
+    }
 }

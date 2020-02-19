@@ -5,7 +5,7 @@ using UnityEngine;
 public class WesternRegion : MonoBehaviour
 {
     //WESTERN REGION ID
-    public int idnum = 3;
+    int idnum = 3;
 
     //initialize variables
     bool infected = false;
@@ -29,5 +29,9 @@ public class WesternRegion : MonoBehaviour
     {
         infected = true;
         numTreesInfected += 1;
+    }
+    public int GetId()
+    {
+        return idnum;
     }
 }
