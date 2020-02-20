@@ -5,6 +5,13 @@ using UnityEngine.UI;
 
 public class NorthernRegion : MonoBehaviour
 {
+    //sprite renderer, percent infected  
+    //used to change color of the region on the map
+    SpriteRenderer spriteRenderer;
+    float percentInfected = 0;
+    float colorPercent = 1;
+
+
     //NORTHERN REGION ID
     int idnum = 1;
 
@@ -17,13 +24,14 @@ public class NorthernRegion : MonoBehaviour
     //initialize variables
     bool infected = false;
     int numTreesTotal = 1500000;
-    double numTreesInfected = 0;
+    float numTreesInfected = 0;
     int numTreesDead = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        Debug.Log(spriteRenderer.color.ToString());
     }
 
     // Update is called once per frame
@@ -44,10 +52,14 @@ public class NorthernRegion : MonoBehaviour
             else
             {
                 //test to see how the spread is with a random number 
-                numTreesInfected *= 1.1;
+                numTreesInfected *= 1.1f;
                 numTreesInfected = (int)numTreesInfected / 1;
                 timeSinceUpdated = 0;
                 Debug.Log(numTreesInfected.ToString());
+                percentInfected = (float)numTreesInfected / numTreesTotal;
+                Debug.Log(percentInfected.ToString());
+                colorPercent = 1 - percentInfected;
+                spriteRenderer.color = new Color(colorPercent, colorPercent, colorPercent, 1);
             }
         }
         else
