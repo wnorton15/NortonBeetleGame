@@ -52,7 +52,14 @@ public class NorthernRegion : MonoBehaviour
             else
             {
                 //test to see how the spread is with a random number 
-                numTreesInfected *= 1.1f;
+                if (numTreesInfected < numTreesTotal / 2)
+                {
+                    numTreesInfected *= 1.1f;
+                } else
+                {
+                    numTreesInfected = Mathf.Clamp(numTreesInfected * 1.05f, 1, numTreesTotal);
+                }
+                
                 numTreesInfected = (int)numTreesInfected / 1;
                 timeSinceUpdated = 0;
                 Debug.Log(numTreesInfected.ToString());
