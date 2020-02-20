@@ -7,10 +7,16 @@ public class CentralRegion : MonoBehaviour
     //CENTRAL REGION ID
     int idnum = 2;
 
+    //time since infection update 
+    float timeSinceUpdated = Mathf.Infinity;
+
+    //TODO make this the same for all regions
+    [Range(1, 5)] [SerializeField] float timeBetweenUpdates = 3f;
+
     //initialize variables
     bool infected = false;
     int numTreesTotal = 2500000;
-    int numTreesInfected = 0;
+    double numTreesInfected = 0;
     int numTreesDead = 0;
 
     // Start is called before the first frame update
@@ -22,7 +28,31 @@ public class CentralRegion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (timeSinceUpdated > timeBetweenUpdates)
+        {
+            if (numTreesInfected == 0)
+            {
+                return;
+            }
+            else if (numTreesInfected < 10)
+            {
+                numTreesInfected += 1;
+                timeSinceUpdated = 0;
+                Debug.Log(numTreesInfected.ToString());
+            }
+            else 
+            {
+                //test to see how the spread is with a random number 
+                numTreesInfected *= 1.1;
+                numTreesInfected = (int)numTreesInfected / 1;
+                timeSinceUpdated = 0;
+                Debug.Log(numTreesInfected.ToString());
+            }
+        }
+        else
+        {
+            timeSinceUpdated += Time.deltaTime;
+        }
     }
 
     public void Infect()

@@ -197,7 +197,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9528661}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 2.68, y: 0, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -215,6 +215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3404a0ec8f11e7c43bb472b6bb0c6cac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeBetweenUpdates: 3
 --- !u!1 &159699309
 GameObject:
   m_ObjectHideFlags: 0
@@ -357,7 +358,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 192985730}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 2.68, y: 0, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -375,6 +376,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a209864bfd98db34495f8598cd4c3079, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeBetweenUpdates: 3
 --- !u!1 &252558062
 GameObject:
   m_ObjectHideFlags: 0
@@ -451,7 +453,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 252558062}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 2.68, y: 0, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -469,6 +471,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72aa6a5d6afd8c542a84fa8b212a85e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeBetweenUpdates: 3
 --- !u!1 &325302528
 GameObject:
   m_ObjectHideFlags: 0
@@ -612,6 +615,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72aa6a5d6afd8c542a84fa8b212a85e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeBetweenUpdates: 3
 --- !u!114 &325302534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -624,6 +628,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72aa6a5d6afd8c542a84fa8b212a85e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeBetweenUpdates: 3
 --- !u!1 &330992841
 GameObject:
   m_ObjectHideFlags: 0
@@ -648,7 +653,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330992841}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -738, y: 100, z: 0}
+  m_LocalPosition: {x: -533, y: 100, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 325302529}
@@ -993,7 +998,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 701519025}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 2.68, y: 0, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1011,6 +1016,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44696b6190d498c45820d6152d1e1606, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeBetweenUpdates: 3
 --- !u!1 &808677080
 GameObject:
   m_ObjectHideFlags: 0
@@ -1153,6 +1159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3404a0ec8f11e7c43bb472b6bb0c6cac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeBetweenUpdates: 3
 --- !u!1 &822691863
 GameObject:
   m_ObjectHideFlags: 0
@@ -1629,9 +1636,10 @@ MonoBehaviour:
   startingRegionButtons: {fileID: 330992841}
   infectionCounters: {fileID: 822691863}
   northernRegion: {fileID: 252558065}
-  westernRegion: {fileID: 0}
-  centralRegion: {fileID: 0}
-  southernRegion: {fileID: 0}
+  westernRegion: {fileID: 192985733}
+  centralRegion: {fileID: 9528664}
+  southernRegion: {fileID: 701519028}
+  spreadSpeed: 0
 --- !u!4 &1779831683
 Transform:
   m_ObjectHideFlags: 0

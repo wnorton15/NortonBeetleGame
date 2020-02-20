@@ -17,6 +17,11 @@ public class Infection : MonoBehaviour
     [SerializeField] CentralRegion centralRegion;
     [SerializeField] SouthernRegion southernRegion;
 
+    //spread speed between -1 & 1
+    //spread speed of 1 is fast, 0 is no spread, -1 would be fast curing of trees
+    //TODO maybe change to not serialize field 
+    [Range(-1, 1)] [SerializeField] float spreadSpeed = 0;
+
 
     // Start is called before the first frame update
     void Start()
