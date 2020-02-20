@@ -6,14 +6,7 @@ using UnityEngine.UI;
 
 public class NorthernRegion : MonoBehaviour
 {
-    //sprite renderer, percent infected  
-    //used to change color of the region on the map
-    SpriteRenderer spriteRenderer;
-    float percentInfected = 0;
-    float colorPercent = 1;
-
-    //counter variable 
-    [SerializeField] UnityEngine.UI.Text regionCounter = null;
+    float timeBetweenUpdates = 1f;
 
     //NORTHERN REGION ID
     int idnum = 1;
@@ -21,19 +14,29 @@ public class NorthernRegion : MonoBehaviour
     //time since infection update 
     float timeSinceUpdated = Mathf.Infinity;
 
-    //TODO make this the same for all regions
-    [Range(1, 5)] [SerializeField] float timeBetweenUpdates = 3f;
+    //time between infection updates 
+    [SerializeField] Infection infection = null;
 
     //initialize variables
     bool infected = false;
     int numTreesTotal = 1500000;
     float numTreesInfected = 0;
 
+    //counter variable 
+    [SerializeField] UnityEngine.UI.Text regionCounter = null;
+
+    //sprite renderer, percent infected  
+    //used to change color of the region on the map
+    SpriteRenderer spriteRenderer;
+    float percentInfected = 0;
+    float colorPercent = 1;
+
     // Start is called before the first frame update
     void Start()
     {
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         Debug.Log(spriteRenderer.color.ToString());
+        timeBetweenUpdates = infection.GetTimeBetweenUpdates();
     }
 
     // Update is called once per frame

@@ -10,19 +10,31 @@ public class SouthernRegion : MonoBehaviour
     //time since infection update 
     float timeSinceUpdated = Mathf.Infinity;
 
-    //TODO make this the same for all regions
-    [Range(1, 5)] [SerializeField] float timeBetweenUpdates = 3f;
+    //infection game object 
+    [SerializeField] Infection infection = null;
+
+    float timeBetweenUpdates = 1f;
 
     //initialize variables
     bool infected = false;
     int numTreesTotal = 1500000;
-    double numTreesInfected = 0;
-    int numTreesDead = 0;
+    float numTreesInfected = 0;
+
+    //counter variable 
+    [SerializeField] UnityEngine.UI.Text regionCounter = null;
+
+    //sprite renderer, percent infected  
+    //used to change color of the region on the map
+    SpriteRenderer spriteRenderer;
+    float percentInfected = 0;
+    float colorPercent = 1;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        Debug.Log(spriteRenderer.color.ToString());
+        timeBetweenUpdates = infection.GetTimeBetweenUpdates();
     }
 
     // Update is called once per frame
@@ -34,19 +46,9 @@ public class SouthernRegion : MonoBehaviour
             {
                 return;
             }
-            else if (numTreesInfected < 10)
-            {
-                numTreesInfected += 1;
-                timeSinceUpdated = 0;
-                Debug.Log(numTreesInfected.ToString());
-            }
             else
             {
-                //test to see how the spread is with a random number 
-                numTreesInfected *= 1.1;
-                numTreesInfected = (int)numTreesInfected / 1;
-                timeSinceUpdated = 0;
-                Debug.Log(numTreesInfected.ToString());
+                UpdateInfection();
             }
         }
         else
@@ -56,11 +58,60 @@ public class SouthernRegion : MonoBehaviour
 
     }
 
+    private void UpdateInfection()
+    {
+        //grow slowly when small infection 
+        if (numTreesInfected < 10)
+        {
+            numTreesInfected += 1;
+            timeSinceUpdated = 0;
+            Debug.Log(numTreesInfected.ToString());
+            UpdateCounter();
+        }
+        else
+        {
+            //test to see how the spread is with a random number 1.1 seems to work good
+            //TODO make the spread easily changed by variable 
+            if (numTreesInfected < numTreesTotal / 2)
+            {
+                numTreesInfected *= 1.1f;
+            }
+            else
+            {//keeps infection from going over 100%
+                numTreesInfected = Mathf.Clamp(numTreesInfected * 1.05f, 1, numTreesTotal);
+            }
+            //keeps number of trees infected as an int 
+            numTreesInfected = (int)numTreesInfected / 1;
+            //reset timer 
+            timeSinceUpdated = 0;
+            //get percent of region infected. This is used to change color 
+            percentInfected = (float)numTreesInfected / numTreesTotal;
+
+            //debug messages for testing
+            Debug.Log(numTreesInfected.ToString());
+            Debug.Log(percentInfected.ToString());
+
+            //update counter 
+            UpdateCounter();
+
+            //change color 
+            colorPercent = 1 - percentInfected;
+            spriteRenderer.color = new Color(colorPercent, colorPercent, colorPercent, 1);
+        }
+    }
+
+    private void UpdateCounter()
+    {
+        regionCounter.text = numTreesInfected.ToString();
+    }
+
     public void Infect()
     {
+        //infect region 
         infected = true;
         numTreesInfected += 1;
     }
+
     public int GetId()
     {
         return idnum;

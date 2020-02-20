@@ -17,6 +17,8 @@ public class Infection : MonoBehaviour
     [SerializeField] CentralRegion centralRegion;
     [SerializeField] SouthernRegion southernRegion;
 
+    [Range(1, 5)] [SerializeField] float timeBetweenUpdates = 3f;
+
     //spread speed between -1 & 1
     //spread speed of 1 is fast, 0 is no spread, -1 would be fast curing of trees
     //TODO maybe change to not serialize field 
@@ -94,5 +96,15 @@ public class Infection : MonoBehaviour
                 southernRegion.Infect();
                 break;
         }
+    }
+
+    public float GetTimeBetweenUpdates()
+    {
+        return timeBetweenUpdates;
+    }
+
+    public float GetSpreadSpeed()
+    {
+        return spreadSpeed;
     }
 }
