@@ -10,6 +10,7 @@ public class Infection : MonoBehaviour
 
     [SerializeField] GameObject startingRegionButtons;
     [SerializeField] GameObject infectionCounters;
+    [SerializeField] GameObject upgradeButton;
 
     //regions 
     [SerializeField] NorthernRegion northernRegion;
@@ -65,12 +66,18 @@ public class Infection : MonoBehaviour
         DisableStartingRegionButtons();
     }
 
-    //get rid of the buttons when one starting region is selected
-    //TODO enable infection counters 
+    //get rid of the buttons when one starting region is selected 
+    //enable infection counters and upgrade button
     private void DisableStartingRegionButtons()
     {
         startingRegionButtons.SetActive(false);
         EnableInfectionCounters();
+        EnableUpgradeButton();
+    }
+
+    private void EnableUpgradeButton()
+    {
+        upgradeButton.SetActive(true);
     }
 
     private void EnableInfectionCounters()

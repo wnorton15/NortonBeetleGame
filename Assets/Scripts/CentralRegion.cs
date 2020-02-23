@@ -11,8 +11,10 @@ public class CentralRegion : MonoBehaviour
     float timeSinceUpdated = Mathf.Infinity;
 
     float timeBetweenUpdates = 1f;
-    //time between infection updates 
+    
+    //infection game object
     [SerializeField] Infection infection = null;
+
     //initialize variables
     bool infected = false;
     int numTreesTotal = 2500000;
