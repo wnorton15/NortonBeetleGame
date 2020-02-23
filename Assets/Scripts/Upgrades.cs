@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Upgrades : MonoBehaviour
 {
+
+    [SerializeField] GameObject upgradeMenu;
+    [SerializeField] GameObject[] otherLayersOpen;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,4 +19,11 @@ public class Upgrades : MonoBehaviour
     {
         
     }
+
+    public void OpenUpgradeScreen()
+    {
+        upgradeMenu.SetActive(true);
+    }
+
+
 }
