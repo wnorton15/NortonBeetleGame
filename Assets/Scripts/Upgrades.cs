@@ -4,20 +4,14 @@ using UnityEngine;
 
 public class Upgrades : MonoBehaviour
 {
-
     [SerializeField] GameObject upgradeMenu;
     [SerializeField] GameObject[] otherLayersOpen;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    int upgradePoints = 0;
 
-    // Update is called once per frame
-    void Update()
+    public void AddUpgradePoint()
     {
-        
+        upgradePoints++;
     }
 
     public void OpenUpgradeScreen()
@@ -36,5 +30,10 @@ public class Upgrades : MonoBehaviour
         {
             layer.SetActive(true);
         }
+    }
+
+    public void BuyUpgrade(int id)
+    {
+        Debug.Log(id.ToString());
     }
 }
