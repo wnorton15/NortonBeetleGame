@@ -230,7 +230,7 @@ GameObject:
   - component: {fileID: 115282186}
   - component: {fileID: 115282185}
   m_Layer: 5
-  m_Name: BackButton (9)
+  m_Name: InfectTreatedTreesButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -416,7 +416,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &189261508
 Transform:
   m_ObjectHideFlags: 0
@@ -596,7 +596,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: <-- Back
+  m_Text: Fly farther
 --- !u!222 &235836263
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -769,7 +769,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: <-- Back
+  m_Text: Harder to detect
 --- !u!222 &293963194
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -922,7 +922,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &330992842
 Transform:
   m_ObjectHideFlags: 0
@@ -1084,7 +1084,7 @@ GameObject:
   - component: {fileID: 483796826}
   - component: {fileID: 483796825}
   m_Layer: 5
-  m_Name: BackButton (5)
+  m_Name: MoreEggsButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1509,7 +1509,7 @@ GameObject:
   - component: {fileID: 615190692}
   - component: {fileID: 615190691}
   m_Layer: 5
-  m_Name: BackButton (7)
+  m_Name: HarderToDetectButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1891,7 +1891,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: <-- Back
+  m_Text: Harder to kill
 --- !u!222 &786472597
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2045,7 +2045,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: <-- Back
+  m_Text: Spread in firewood
 --- !u!222 &796913891
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2294,7 +2294,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: <-- Back
+  m_Text: Infect treated trees
 --- !u!222 &876994359
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2501,7 +2501,7 @@ GameObject:
   - component: {fileID: 1033982061}
   - component: {fileID: 1033982060}
   m_Layer: 5
-  m_Name: BackButton (8)
+  m_Name: HarderToKillButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2619,7 +2619,7 @@ GameObject:
   - component: {fileID: 1171552183}
   - component: {fileID: 1171552182}
   m_Layer: 5
-  m_Name: BackButton (4)
+  m_Name: FlyFartherButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2869,7 +2869,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: <-- Back
+  m_Text: Spread in untreated lumber
 --- !u!222 &1221316386
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2968,7 +2968,7 @@ GameObject:
   - component: {fileID: 1258717039}
   - component: {fileID: 1258717038}
   m_Layer: 5
-  m_Name: BackButton (3)
+  m_Name: WoodChipsButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3163,7 +3163,7 @@ GameObject:
   - component: {fileID: 1392621986}
   - component: {fileID: 1392621985}
   m_Layer: 5
-  m_Name: BackButton (2)
+  m_Name: LumberButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3614,7 +3614,7 @@ GameObject:
   - component: {fileID: 1613453813}
   - component: {fileID: 1613453812}
   m_Layer: 5
-  m_Name: BackButton (6)
+  m_Name: ReproduceButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4070,7 +4070,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: <-- Back
+  m_Text: Spread in wood chips
 --- !u!222 &1830256286
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4276,7 +4276,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: <-- Back
+  m_Text: Lay more eggs
 --- !u!222 &1900069776
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4300,7 +4300,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1900659287
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4337,7 +4337,7 @@ GameObject:
   - component: {fileID: 2023076790}
   - component: {fileID: 2023076789}
   m_Layer: 5
-  m_Name: BackButton (1)
+  m_Name: FirewoodButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4824,7 +4824,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: <-- Back
+  m_Text: Reproduce faster
 --- !u!222 &2116032623
 CanvasRenderer:
   m_ObjectHideFlags: 0
