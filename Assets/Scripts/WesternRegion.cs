@@ -33,7 +33,6 @@ public class WesternRegion : MonoBehaviour
     void Start()
     {
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
-        Debug.Log(spriteRenderer.color.ToString());
         timeBetweenUpdates = infection.GetTimeBetweenUpdates();
     }
 
@@ -65,7 +64,6 @@ public class WesternRegion : MonoBehaviour
         {
             numTreesInfected += 1;
             timeSinceUpdated = 0;
-            Debug.Log(numTreesInfected.ToString());
             UpdateCounter();
         }
         else
