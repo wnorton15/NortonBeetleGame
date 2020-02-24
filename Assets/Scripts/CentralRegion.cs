@@ -70,7 +70,6 @@ public class CentralRegion : MonoBehaviour
         }
         else
         {
-            //test to see how the spread is with a random number 1.1 seems to work good
             //infection.getspreadspeed returns the between -1 and 1
             if (numTreesInfected < numTreesTotal / 2)
             {

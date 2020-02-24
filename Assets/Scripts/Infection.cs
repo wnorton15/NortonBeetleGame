@@ -18,11 +18,12 @@ public class Infection : MonoBehaviour
     [SerializeField] CentralRegion centralRegion;
     [SerializeField] SouthernRegion southernRegion;
 
-    [Range(1, 5)] [SerializeField] float timeBetweenUpdates = 3f;
+    //changes with upgrades 
+    [Range(1, 5)] [SerializeField] float timeBetweenUpdates;
 
     //spread speed between -1 & 1
     //spread speed of 1 is fast, 0 is no spread, -1 would be fast curing of trees
-    //TODO maybe change to not serialize field 
+    //serializefield only to test 
     [Range(-1, 1)] [SerializeField] float spreadSpeed = 0;
 
 
@@ -31,6 +32,12 @@ public class Infection : MonoBehaviour
     {
         //disable the counters for while the game is going 
         infectionCounters.SetActive(false);
+
+        //start spread speed at .1, that means the spread will be a multiple of 1.1 every time it is updated
+        spreadSpeed = .1f;
+
+        //start time between updates at 3
+        timeBetweenUpdates = 3f;
     }
 
     // Update is called once per frame

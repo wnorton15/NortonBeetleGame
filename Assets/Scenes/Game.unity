@@ -230,7 +230,7 @@ GameObject:
   - component: {fileID: 115282186}
   - component: {fileID: 115282185}
   m_Layer: 5
-  m_Name: InfectTreatedTreesButton
+  m_Name: HarderToDetectButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -769,7 +769,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Harder to detect
+  m_Text: Infect treated trees
 --- !u!222 &293963194
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1509,7 +1509,7 @@ GameObject:
   - component: {fileID: 615190692}
   - component: {fileID: 615190691}
   m_Layer: 5
-  m_Name: HarderToDetectButton
+  m_Name: InfectTreatedTreesButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2294,7 +2294,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Infect treated trees
+  m_Text: Harder to detect
 --- !u!222 &876994359
 CanvasRenderer:
   m_ObjectHideFlags: 0
