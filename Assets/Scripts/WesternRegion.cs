@@ -71,14 +71,14 @@ public class WesternRegion : MonoBehaviour
         else
         {
             //test to see how the spread is with a random number 1.1 seems to work good
-            //TODO make the spread easily changed by variable 
+            //infection.getspreadspeed returns the between -1 and 1
             if (numTreesInfected < numTreesTotal / 2)
             {
-                numTreesInfected *= 1.1f;
+                numTreesInfected *= 1f + infection.GetSpreadSpeed();
             }
             else
             {//keeps infection from going over 100%
-                numTreesInfected = Mathf.Clamp(numTreesInfected * 1.05f, 1, numTreesTotal);
+                numTreesInfected = Mathf.Clamp(numTreesInfected * (1f + (infection.GetSpreadSpeed() / 2f)), 1, numTreesTotal);
             }
             //keeps number of trees infected as an int 
             numTreesInfected = (int)numTreesInfected / 1;
