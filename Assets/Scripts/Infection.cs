@@ -2,15 +2,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Infection : MonoBehaviour
 {
     //int variable keeping track of the starting region 
     int startingRegion = 0;
-
+    
+    //layers of ui, used to enable / disable 
     [SerializeField] GameObject startingRegionButtons;
     [SerializeField] GameObject infectionCounters;
     [SerializeField] GameObject upgradeButton;
+    [SerializeField] GameObject upgradePointsCounterObject;
 
     //regions 
     [SerializeField] NorthernRegion northernRegion;
@@ -30,7 +33,7 @@ public class Infection : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //disable the counters for while the game is going 
+        //disable the counters until starting region is picked 
         infectionCounters.SetActive(false);
 
         //start spread speed at .1, that means the spread will be a multiple of 1.1 every time it is updated
@@ -43,7 +46,7 @@ public class Infection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     //methods to set starting region and disable buttons 
@@ -85,6 +88,7 @@ public class Infection : MonoBehaviour
     private void EnableUpgradeButton()
     {
         upgradeButton.SetActive(true);
+        upgradePointsCounterObject.SetActive(true);
     }
 
     private void EnableInfectionCounters()

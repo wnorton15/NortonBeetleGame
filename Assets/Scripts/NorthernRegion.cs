@@ -9,6 +9,15 @@ public class NorthernRegion : MonoBehaviour
     //NORTHERN REGION ID
     int idnum = 1;
 
+    //bool variables to track what points have been given. 
+    //each region gives 3 points. 1/2 infected, 3/4 infected, and entirely infected 
+    bool firstPoint = false;
+    bool secondPoint = false;
+    bool thirdPoint = false;
+
+    //serialize field for upgrades script, used for adding points 
+    [SerializeField] Upgrades upgrades;
+
     //time since infection update 
     float timeSinceUpdated = Mathf.Infinity;
 
@@ -41,6 +50,7 @@ public class NorthernRegion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //this is for updating the number of trees infected 
         if (timeSinceUpdated > timeBetweenUpdates)
         {
             if (numTreesInfected == 0)
@@ -57,6 +67,29 @@ public class NorthernRegion : MonoBehaviour
             timeSinceUpdated += Time.deltaTime;
         }
 
+        //this is for adding upgrade points 
+        CheckForUpgradePoint();
+
+    }
+
+    private void CheckForUpgradePoint()
+    {
+        //each point can only be given once 
+        if (numTreesInfected > numTreesTotal / 2 && !firstPoint)
+        {
+            upgrades.AddUpgradePoint();
+            firstPoint = true;
+        }
+        else if (numTreesInfected > numTreesTotal / 3 && !secondPoint)
+        {
+            upgrades.AddUpgradePoint();
+            secondPoint = true;
+        }
+        else if (numTreesInfected == numTreesTotal && !thirdPoint)
+        {
+            upgrades.AddUpgradePoint();
+            thirdPoint = true;
+        }
     }
 
     private void UpdateInfection()

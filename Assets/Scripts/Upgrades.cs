@@ -4,16 +4,31 @@ using UnityEngine;
 
 public class Upgrades : MonoBehaviour
 {
-    [SerializeField] GameObject upgradeMenu;
-    [SerializeField] GameObject[] otherLayersOpen;
-    [SerializeField] Infection infection;
-    [SerializeField] UpgradeInfo[] upgradeInfo;
+    [SerializeField] GameObject upgradeMenu = null;
+    [SerializeField] GameObject[] otherLayersOpen = null;
+    [SerializeField] Infection infection = null;
+    [SerializeField] UpgradeInfo[] upgradeInfo = null;
+
+
+    //upgrade points counter, used to track upgrade points 
+    [SerializeField] UnityEngine.UI.Text upgradePointsCounter;
 
     int upgradePoints = 5;
 
     private void Start()
     {
         
+    }
+
+    private void Update()
+    {
+        //update upgrade points counter 
+        UpdateUpgradePointsCounter();
+    }
+
+    private void UpdateUpgradePointsCounter()
+    {
+        upgradePointsCounter.text = upgradePoints.ToString();
     }
 
     //increases upgrade point balance by 1 
