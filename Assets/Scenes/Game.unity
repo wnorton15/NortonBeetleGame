@@ -1281,6 +1281,7 @@ MonoBehaviour:
   - {fileID: 1900659286}
   - {fileID: 822691863}
   - {fileID: 621372040}
+  infection: {fileID: 1779831682}
   upgradeInfo:
   - {fileID: 2023076792}
   - {fileID: 1392621988}

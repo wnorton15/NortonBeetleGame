@@ -6,10 +6,10 @@ public class Upgrades : MonoBehaviour
 {
     [SerializeField] GameObject upgradeMenu;
     [SerializeField] GameObject[] otherLayersOpen;
-
+    [SerializeField] Infection infection;
     [SerializeField] UpgradeInfo[] upgradeInfo;
 
-    int upgradePoints = 0;
+    int upgradePoints = 5;
 
     private void Start()
     {
@@ -55,6 +55,7 @@ public class Upgrades : MonoBehaviour
                 switch (upgradeInfo[i].GetEffect())
                 {
                     case UpgradeEffects.spread:
+                        infection.IncreaseSpreadSpeed(upgradeInfo[i].GetPower());
                         break;
                     case UpgradeEffects.infection:
                         break;
