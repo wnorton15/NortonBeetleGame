@@ -45,6 +45,25 @@ public class Upgrades : MonoBehaviour
     //will take id, get the upgrade, decrease point balance, disable button
     public void BuyUpgrade(int id)
     {
-        Debug.Log(id.ToString());
+        for (int i = 0; i < upgradeInfo.Length; i++)
+        {
+            //player has enough money, hasn't already purchased upgrade, and has enough points
+            if (id == upgradeInfo[i].GetUpgradeId() && !upgradeInfo[i].GetUpgradePurchased() && upgradePoints >= upgradeInfo[i].GetUpgradeCost())
+            {
+                upgradePoints -= upgradeInfo[i].GetUpgradeCost();
+                upgradeInfo[i].Purchase();
+                switch (upgradeInfo[i].GetEffect())
+                {
+                    case UpgradeEffects.spread:
+                        break;
+                    case UpgradeEffects.infection:
+                        break;
+                    case UpgradeEffects.resistance:
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
     }
 }

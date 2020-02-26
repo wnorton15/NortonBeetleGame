@@ -32,6 +32,12 @@ public class UpgradeInfo : MonoBehaviour
     {
         return power;
     }
+
+    //call when purchased 
+    public void Purchase()
+    {
+        upgradePurchased = true;
+    }
 }
 
 //enum of effects 

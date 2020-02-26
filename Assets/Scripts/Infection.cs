@@ -112,13 +112,19 @@ public class Infection : MonoBehaviour
         }
     }
 
+    //these return values
     public float GetTimeBetweenUpdates()
     {
         return timeBetweenUpdates;
     }
-
     public float GetSpreadSpeed()
     {
         return spreadSpeed;
+    }
+
+    //spread upgrades call this 
+    public void IncreaseSpreadSpeed(int power)
+    {
+        spreadSpeed += (float)power * .15f;
     }
 }
