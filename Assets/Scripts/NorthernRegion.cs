@@ -6,8 +6,6 @@ using UnityEngine.UI;
 
 public class NorthernRegion : MonoBehaviour
 {
-    float timeBetweenUpdates = 1f;
-
     //NORTHERN REGION ID
     int idnum = 1;
 
@@ -16,6 +14,8 @@ public class NorthernRegion : MonoBehaviour
 
     //time between infection updates 
     [SerializeField] Infection infection = null;
+
+    float timeBetweenUpdates = 1f;
 
     //initialize variables
     bool infected = false;

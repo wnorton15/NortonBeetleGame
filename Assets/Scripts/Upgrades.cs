@@ -7,13 +7,22 @@ public class Upgrades : MonoBehaviour
     [SerializeField] GameObject upgradeMenu;
     [SerializeField] GameObject[] otherLayersOpen;
 
+    [SerializeField] UpgradeInfo[] upgradeInfo;
+
     int upgradePoints = 0;
 
+    private void Start()
+    {
+        
+    }
+
+    //increases upgrade point balance by 1 
     public void AddUpgradePoint()
     {
         upgradePoints++;
     }
 
+    //opens the upgrade screen, same scene but just enables the buttons 
     public void OpenUpgradeScreen()
     {
         foreach (GameObject layer in otherLayersOpen)
@@ -23,6 +32,7 @@ public class Upgrades : MonoBehaviour
         upgradeMenu.SetActive(true);
     }
 
+    //closes upgrade screen 
     public void backToGame()
     {
         upgradeMenu.SetActive(false);
@@ -32,6 +42,7 @@ public class Upgrades : MonoBehaviour
         }
     }
 
+    //will take id, get the upgrade, decrease point balance, disable button
     public void BuyUpgrade(int id)
     {
         Debug.Log(id.ToString());

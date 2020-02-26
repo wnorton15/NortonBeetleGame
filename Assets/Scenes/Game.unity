@@ -215,7 +215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3404a0ec8f11e7c43bb472b6bb0c6cac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infection: {fileID: 0}
+  infection: {fileID: 1779831682}
   regionCounter: {fileID: 1416873326}
 --- !u!1 &115282183
 GameObject:
@@ -229,6 +229,7 @@ GameObject:
   - component: {fileID: 115282187}
   - component: {fileID: 115282186}
   - component: {fileID: 115282185}
+  - component: {fileID: 115282188}
   m_Layer: 5
   m_Name: HarderToDetectButton
   m_TagString: Untagged
@@ -276,8 +277,8 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0, g: 0.61960787, b: 0.20784315, a: 1}
-    m_HighlightedColor: {r: 0, g: 0.5188679, b: 0.17405061, a: 1}
+    m_NormalColor: {r: 0.9607844, g: 0.9607844, b: 0.9607844, a: 1}
+    m_HighlightedColor: {r: 0.8962264, g: 0.8962264, b: 0.8962264, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -298,7 +299,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 115282186}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 484507066}
+        m_MethodName: BuyUpgrade
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 9
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &115282186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -312,7 +324,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.61960787, b: 0.20784315, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -335,6 +347,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 115282183}
   m_CullTransparentMesh: 0
+--- !u!114 &115282188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 115282183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63e6b66e59efae9419dca44498ee11d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradeId: 9
+  upgradePurchased: 0
+  upgradeCost: 3
+  effect: 2
+  power: 3
 --- !u!1 &159699309
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,7 +445,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &189261508
 Transform:
   m_ObjectHideFlags: 0
@@ -526,7 +555,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a209864bfd98db34495f8598cd4c3079, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infection: {fileID: 0}
+  infection: {fileID: 1779831682}
   regionCounter: {fileID: 1301413064}
 --- !u!1 &235836260
 GameObject:
@@ -922,7 +951,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &330992842
 Transform:
   m_ObjectHideFlags: 0
@@ -1083,6 +1112,7 @@ GameObject:
   - component: {fileID: 483796827}
   - component: {fileID: 483796826}
   - component: {fileID: 483796825}
+  - component: {fileID: 483796828}
   m_Layer: 5
   m_Name: MoreEggsButton
   m_TagString: Untagged
@@ -1130,8 +1160,8 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0, g: 0.61960787, b: 0.20784315, a: 1}
-    m_HighlightedColor: {r: 0, g: 0.5188679, b: 0.17405061, a: 1}
+    m_NormalColor: {r: 0.9607844, g: 0.9607844, b: 0.9607844, a: 1}
+    m_HighlightedColor: {r: 0.8962264, g: 0.8962264, b: 0.8962264, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -1152,7 +1182,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 483796826}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 484507066}
+        m_MethodName: BuyUpgrade
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 5
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &483796826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1166,7 +1207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.61960787, b: 0.20784315, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1189,6 +1230,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 483796823}
   m_CullTransparentMesh: 0
+--- !u!114 &483796828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 483796823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63e6b66e59efae9419dca44498ee11d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradeId: 5
+  upgradePurchased: 0
+  upgradeCost: 2
+  effect: 1
+  power: 2
 --- !u!1 &484507065
 GameObject:
   m_ObjectHideFlags: 0
@@ -1223,6 +1281,16 @@ MonoBehaviour:
   - {fileID: 1900659286}
   - {fileID: 822691863}
   - {fileID: 621372040}
+  upgradeInfo:
+  - {fileID: 2023076792}
+  - {fileID: 1392621988}
+  - {fileID: 1258717041}
+  - {fileID: 1171552185}
+  - {fileID: 483796828}
+  - {fileID: 1613453815}
+  - {fileID: 615190694}
+  - {fileID: 1033982063}
+  - {fileID: 115282188}
 --- !u!4 &484507067
 Transform:
   m_ObjectHideFlags: 0
@@ -1426,8 +1494,8 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0, g: 0.61960787, b: 0.20784315, a: 1}
-    m_HighlightedColor: {r: 0, g: 0.5188679, b: 0.17405061, a: 1}
+    m_NormalColor: {r: 0.9607844, g: 0.9607844, b: 0.9607844, a: 1}
+    m_HighlightedColor: {r: 0.8962264, g: 0.8962264, b: 0.8962264, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -1473,7 +1541,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.61960787, b: 0.20784315, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1508,6 +1576,7 @@ GameObject:
   - component: {fileID: 615190693}
   - component: {fileID: 615190692}
   - component: {fileID: 615190691}
+  - component: {fileID: 615190694}
   m_Layer: 5
   m_Name: InfectTreatedTreesButton
   m_TagString: Untagged
@@ -1555,8 +1624,8 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0, g: 0.61960787, b: 0.20784315, a: 1}
-    m_HighlightedColor: {r: 0, g: 0.5188679, b: 0.17405061, a: 1}
+    m_NormalColor: {r: 0.9607844, g: 0.9607844, b: 0.9607844, a: 1}
+    m_HighlightedColor: {r: 0.8962264, g: 0.8962264, b: 0.8962264, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -1577,7 +1646,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 615190692}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 484507066}
+        m_MethodName: BuyUpgrade
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 7
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &615190692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1591,7 +1671,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.61960787, b: 0.20784315, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1614,6 +1694,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 615190689}
   m_CullTransparentMesh: 0
+--- !u!114 &615190694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 615190689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63e6b66e59efae9419dca44498ee11d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradeId: 7
+  upgradePurchased: 0
+  upgradeCost: 1
+  effect: 2
+  power: 1
 --- !u!1 &621372040
 GameObject:
   m_ObjectHideFlags: 0
@@ -1744,7 +1841,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44696b6190d498c45820d6152d1e1606, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infection: {fileID: 0}
+  infection: {fileID: 1779831682}
   regionCounter: {fileID: 2055225634}
 --- !u!1 &758140679
 GameObject:
@@ -2500,6 +2597,7 @@ GameObject:
   - component: {fileID: 1033982062}
   - component: {fileID: 1033982061}
   - component: {fileID: 1033982060}
+  - component: {fileID: 1033982063}
   m_Layer: 5
   m_Name: HarderToKillButton
   m_TagString: Untagged
@@ -2547,8 +2645,8 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0, g: 0.61960787, b: 0.20784315, a: 1}
-    m_HighlightedColor: {r: 0, g: 0.5188679, b: 0.17405061, a: 1}
+    m_NormalColor: {r: 0.9607844, g: 0.9607844, b: 0.9607844, a: 1}
+    m_HighlightedColor: {r: 0.8962264, g: 0.8962264, b: 0.8962264, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -2569,7 +2667,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1033982061}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 484507066}
+        m_MethodName: BuyUpgrade
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 8
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1033982061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2583,7 +2692,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.61960787, b: 0.20784315, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2606,6 +2715,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1033982058}
   m_CullTransparentMesh: 0
+--- !u!114 &1033982063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1033982058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63e6b66e59efae9419dca44498ee11d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradeId: 8
+  upgradePurchased: 0
+  upgradeCost: 2
+  effect: 2
+  power: 2
 --- !u!1 &1171552180
 GameObject:
   m_ObjectHideFlags: 0
@@ -2618,6 +2744,7 @@ GameObject:
   - component: {fileID: 1171552184}
   - component: {fileID: 1171552183}
   - component: {fileID: 1171552182}
+  - component: {fileID: 1171552185}
   m_Layer: 5
   m_Name: FlyFartherButton
   m_TagString: Untagged
@@ -2665,8 +2792,8 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0, g: 0.61960787, b: 0.20784315, a: 1}
-    m_HighlightedColor: {r: 0, g: 0.5188679, b: 0.17405061, a: 1}
+    m_NormalColor: {r: 0.9607844, g: 0.9607844, b: 0.9607844, a: 1}
+    m_HighlightedColor: {r: 0.8962264, g: 0.8962264, b: 0.8962264, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -2687,7 +2814,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1171552183}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 484507066}
+        m_MethodName: BuyUpgrade
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1171552183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2701,7 +2839,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.61960787, b: 0.20784315, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2724,6 +2862,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1171552180}
   m_CullTransparentMesh: 0
+--- !u!114 &1171552185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171552180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63e6b66e59efae9419dca44498ee11d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradeId: 4
+  upgradePurchased: 0
+  upgradeCost: 1
+  effect: 1
+  power: 1
 --- !u!1 &1217856842
 GameObject:
   m_ObjectHideFlags: 0
@@ -2967,6 +3122,7 @@ GameObject:
   - component: {fileID: 1258717040}
   - component: {fileID: 1258717039}
   - component: {fileID: 1258717038}
+  - component: {fileID: 1258717041}
   m_Layer: 5
   m_Name: WoodChipsButton
   m_TagString: Untagged
@@ -3014,8 +3170,8 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0, g: 0.61960787, b: 0.20784315, a: 1}
-    m_HighlightedColor: {r: 0, g: 0.5188679, b: 0.17405061, a: 1}
+    m_NormalColor: {r: 0.9607844, g: 0.9607844, b: 0.9607844, a: 1}
+    m_HighlightedColor: {r: 0.8962264, g: 0.8962264, b: 0.8962264, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -3036,7 +3192,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1258717039}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 484507066}
+        m_MethodName: BuyUpgrade
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1258717039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3050,7 +3217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.61960787, b: 0.20784315, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3073,6 +3240,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1258717036}
   m_CullTransparentMesh: 0
+--- !u!114 &1258717041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1258717036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63e6b66e59efae9419dca44498ee11d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradeId: 3
+  upgradePurchased: 0
+  upgradeCost: 3
+  effect: 0
+  power: 3
 --- !u!1 &1301413062
 GameObject:
   m_ObjectHideFlags: 0
@@ -3162,6 +3346,7 @@ GameObject:
   - component: {fileID: 1392621987}
   - component: {fileID: 1392621986}
   - component: {fileID: 1392621985}
+  - component: {fileID: 1392621988}
   m_Layer: 5
   m_Name: LumberButton
   m_TagString: Untagged
@@ -3209,8 +3394,8 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0, g: 0.61960787, b: 0.20784315, a: 1}
-    m_HighlightedColor: {r: 0, g: 0.5188679, b: 0.17405061, a: 1}
+    m_NormalColor: {r: 0.9607844, g: 0.9607844, b: 0.9607844, a: 1}
+    m_HighlightedColor: {r: 0.8962264, g: 0.8962264, b: 0.8962264, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -3231,7 +3416,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1392621986}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 484507066}
+        m_MethodName: BuyUpgrade
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1392621986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3245,7 +3441,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.61960787, b: 0.20784315, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3268,6 +3464,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1392621983}
   m_CullTransparentMesh: 0
+--- !u!114 &1392621988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1392621983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63e6b66e59efae9419dca44498ee11d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradeId: 2
+  upgradePurchased: 0
+  upgradeCost: 2
+  effect: 0
+  power: 2
 --- !u!1 &1416873324
 GameObject:
   m_ObjectHideFlags: 0
@@ -3613,6 +3826,7 @@ GameObject:
   - component: {fileID: 1613453814}
   - component: {fileID: 1613453813}
   - component: {fileID: 1613453812}
+  - component: {fileID: 1613453815}
   m_Layer: 5
   m_Name: ReproduceButton
   m_TagString: Untagged
@@ -3660,8 +3874,8 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0, g: 0.61960787, b: 0.20784315, a: 1}
-    m_HighlightedColor: {r: 0, g: 0.5188679, b: 0.17405061, a: 1}
+    m_NormalColor: {r: 0.9607844, g: 0.9607844, b: 0.9607844, a: 1}
+    m_HighlightedColor: {r: 0.8962264, g: 0.8962264, b: 0.8962264, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -3682,7 +3896,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1613453813}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 484507066}
+        m_MethodName: BuyUpgrade
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 6
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1613453813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3696,7 +3921,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.61960787, b: 0.20784315, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3719,6 +3944,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1613453810}
   m_CullTransparentMesh: 0
+--- !u!114 &1613453815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1613453810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63e6b66e59efae9419dca44498ee11d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradeId: 6
+  upgradePurchased: 0
+  upgradeCost: 3
+  effect: 1
+  power: 3
 --- !u!1 &1675974104
 GameObject:
   m_ObjectHideFlags: 0
@@ -4300,7 +4542,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1900659287
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4336,6 +4578,7 @@ GameObject:
   - component: {fileID: 2023076791}
   - component: {fileID: 2023076790}
   - component: {fileID: 2023076789}
+  - component: {fileID: 2023076792}
   m_Layer: 5
   m_Name: FirewoodButton
   m_TagString: Untagged
@@ -4383,8 +4626,8 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0, g: 0.61960787, b: 0.20784315, a: 1}
-    m_HighlightedColor: {r: 0, g: 0.5188679, b: 0.17405061, a: 1}
+    m_NormalColor: {r: 0.9607844, g: 0.9607844, b: 0.9607844, a: 1}
+    m_HighlightedColor: {r: 0.8962264, g: 0.8962264, b: 0.8962264, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -4405,7 +4648,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2023076790}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 484507066}
+        m_MethodName: BuyUpgrade
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2023076790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4419,7 +4673,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.61960787, b: 0.20784315, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -4442,6 +4696,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2023076787}
   m_CullTransparentMesh: 0
+--- !u!114 &2023076792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2023076787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63e6b66e59efae9419dca44498ee11d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradeId: 1
+  upgradePurchased: 0
+  upgradeCost: 1
+  effect: 0
+  power: 1
 --- !u!1 &2028961444
 GameObject:
   m_ObjectHideFlags: 0
