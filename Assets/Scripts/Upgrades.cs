@@ -73,7 +73,7 @@ public class Upgrades : MonoBehaviour
                         
                         break;
                     case UpgradeEffects.infection:
-                        infection.IncreaseSpreadSpeed(upgradeInfo[i].GetPower());
+                        infection.IncreaseInfectionSpeed(upgradeInfo[i].GetPower());
                         break;
                     case UpgradeEffects.resistance:
                         break;

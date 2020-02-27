@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class NorthernRegion : MonoBehaviour
+public class Region : MonoBehaviour
 {
     //NORTHERN REGION ID
-    int idnum = 1;
+    [SerializeField] int idnum = 0;
 
     //bool variables to track what points have been given. 
     //each region gives 3 points. 1/2 infected, 3/4 infected, and entirely infected 
@@ -28,7 +26,7 @@ public class NorthernRegion : MonoBehaviour
 
     //initialize variables
     bool infected = false;
-    int numTreesTotal = 1500000;
+    [SerializeField] int numTreesTotal = 1500000;
     float numTreesInfected = 0;
 
     //counter variable 
@@ -107,7 +105,7 @@ public class NorthernRegion : MonoBehaviour
             //infection.getspreadspeed returns the between -1 and 1
             if (numTreesInfected < numTreesTotal / 2)
             {
-                numTreesInfected *= 1f + infection.GetSpreadSpeed();
+                numTreesInfected *= 1f + infection.GetInfectionSpeed();
             }
             else
             {//keeps infection from going over 100%
@@ -148,5 +146,10 @@ public class NorthernRegion : MonoBehaviour
     public int GetId()
     {
         return idnum;
+    }
+
+    public bool IsInfected()
+    {
+        return infected;
     }
 }

@@ -6,6 +6,14 @@ using UnityEngine.UI;
 
 public class Infection : MonoBehaviour
 {
+    //random object used to control spread
+    System.Random random = new System.Random();
+    //double variable to store the random number for comparing 
+    double randomValue;
+
+    //all regions infected stops spread 
+    bool allRegionsInfected = false;
+
     //int variable keeping track of the starting region 
     int startingRegion = 0;
     
@@ -16,19 +24,22 @@ public class Infection : MonoBehaviour
     [SerializeField] GameObject upgradePointsCounterObject;
 
     //regions 
-    [SerializeField] NorthernRegion northernRegion;
-    [SerializeField] WesternRegion westernRegion;
-    [SerializeField] CentralRegion centralRegion;
-    [SerializeField] SouthernRegion southernRegion;
+    [SerializeField] Region northernRegion;
+    [SerializeField] Region westernRegion;
+    [SerializeField] Region centralRegion;
+    [SerializeField] Region southernRegion;
 
     //changes with upgrades 
     [Range(1, 5)] [SerializeField] float timeBetweenUpdates;
 
-    //spread speed between -1 & 1
-    //spread speed of 1 is fast, 0 is no spread, -1 would be fast curing of trees
+    //infection speed between -1 & 1
+    //infection speed of 1 is fast, 0 is no increase in infection, -1 would be fast curing of trees
     //serializefield only to test 
-    [Range(-1, 1)] [SerializeField] float spreadSpeed = 0;
+    [Range(-1, 1)] [SerializeField] float infectionSpeed = 0;
 
+    //spread speed will be between 0 & .05
+    //starts at 0, increase with upgrades
+    [Range(0, .05f)] [SerializeField] float spreadSpeed = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -37,7 +48,7 @@ public class Infection : MonoBehaviour
         infectionCounters.SetActive(false);
 
         //start spread speed at .1, that means the spread will be a multiple of 1.1 every time it is updated
-        spreadSpeed = .1f;
+        infectionSpeed = .1f;
 
         //start time between updates at 3
         timeBetweenUpdates = 3f;
@@ -46,7 +57,15 @@ public class Infection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        //spread to new region 
+        if (spreadSpeed > 0)
+        {
+            randomValue = random.NextDouble();
+            if (randomValue < spreadSpeed)
+            {
+                
+            }
+        }
     }
 
     //methods to set starting region and disable buttons 
@@ -121,14 +140,14 @@ public class Infection : MonoBehaviour
     {
         return timeBetweenUpdates;
     }
-    public float GetSpreadSpeed()
+    public float GetInfectionSpeed()
     {
-        return spreadSpeed;
+        return infectionSpeed;
     }
 
     //spread upgrades call this 
-    public void IncreaseSpreadSpeed(int power)
+    public void IncreaseInfectionSpeed(int power)
     {
-        spreadSpeed += (float)power * .15f;
+        infectionSpeed += (float)power * .15f;
     }
 }
