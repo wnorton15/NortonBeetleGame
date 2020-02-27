@@ -70,9 +70,10 @@ public class Upgrades : MonoBehaviour
                 switch (upgradeInfo[i].GetEffect())
                 {
                     case UpgradeEffects.spread:
-                        infection.IncreaseSpreadSpeed(upgradeInfo[i].GetPower());
+                        
                         break;
                     case UpgradeEffects.infection:
+                        infection.IncreaseSpreadSpeed(upgradeInfo[i].GetPower());
                         break;
                     case UpgradeEffects.resistance:
                         break;
