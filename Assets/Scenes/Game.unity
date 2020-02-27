@@ -212,10 +212,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 9528661}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3404a0ec8f11e7c43bb472b6bb0c6cac, type: 3}
+  m_Script: {fileID: 11500000, guid: 4aa77fbbd72cb394c86637c83490a50b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  idnum: 2
+  upgrades: {fileID: 484507066}
   infection: {fileID: 1779831682}
+  numTreesTotal: 2500000
   regionCounter: {fileID: 1416873326}
 --- !u!1 &115282183
 GameObject:
@@ -589,10 +592,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 192985730}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a209864bfd98db34495f8598cd4c3079, type: 3}
+  m_Script: {fileID: 11500000, guid: 4aa77fbbd72cb394c86637c83490a50b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  idnum: 3
+  upgrades: {fileID: 484507066}
   infection: {fileID: 1779831682}
+  numTreesTotal: 3500000
   regionCounter: {fileID: 1301413064}
 --- !u!1 &235836260
 GameObject:
@@ -762,11 +768,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 252558062}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72aa6a5d6afd8c542a84fa8b212a85e6, type: 3}
+  m_Script: {fileID: 11500000, guid: 4aa77fbbd72cb394c86637c83490a50b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  idnum: 1
   upgrades: {fileID: 484507066}
   infection: {fileID: 1779831682}
+  numTreesTotal: 1500000
   regionCounter: {fileID: 758140681}
 --- !u!1 &293963191
 GameObject:
@@ -1878,10 +1886,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 701519025}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44696b6190d498c45820d6152d1e1606, type: 3}
+  m_Script: {fileID: 11500000, guid: 4aa77fbbd72cb394c86637c83490a50b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  idnum: 4
+  upgrades: {fileID: 484507066}
   infection: {fileID: 1779831682}
+  numTreesTotal: 1500000
   regionCounter: {fileID: 2055225634}
 --- !u!1 &758140679
 GameObject:
@@ -4425,6 +4436,7 @@ MonoBehaviour:
   centralRegion: {fileID: 9528664}
   southernRegion: {fileID: 701519028}
   timeBetweenUpdates: 1
+  infectionSpeed: 0
   spreadSpeed: 0
 --- !u!4 &1779831683
 Transform:

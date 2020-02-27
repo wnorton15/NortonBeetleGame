@@ -29,8 +29,10 @@ public class Infection : MonoBehaviour
     [SerializeField] Region centralRegion;
     [SerializeField] Region southernRegion;
 
-    //changes with upgrades 
+    //time between infection updates 
     [Range(1, 5)] [SerializeField] float timeBetweenUpdates;
+    float timeBetweenInfectionSpread = 10f;
+    float timeSinceInfectionSpread = Mathf.Infinity;
 
     //infection speed between -1 & 1
     //infection speed of 1 is fast, 0 is no increase in infection, -1 would be fast curing of trees
@@ -39,7 +41,7 @@ public class Infection : MonoBehaviour
 
     //spread speed will be between 0 & .05
     //starts at 0, increase with upgrades
-    [Range(0, .05f)] [SerializeField] float spreadSpeed = 0;
+    [Range(0, .1f)] [SerializeField] float spreadSpeed = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -58,13 +60,40 @@ public class Infection : MonoBehaviour
     void Update()
     {
         //spread to new region 
-        if (spreadSpeed > 0)
+        if (spreadSpeed > 0 && !allRegionsInfected && timeSinceInfectionSpread > timeBetweenUpdates)
         {
             randomValue = random.NextDouble();
+            Debug.Log(randomValue.ToString());
+            Debug.Log("value " + spreadSpeed.ToString());
             if (randomValue < spreadSpeed)
             {
-                
+                if (!centralRegion.IsInfected())
+                {
+                    InfectRegion(2);
+                }
+                else if (!northernRegion.IsInfected())
+                {
+                    InfectRegion(1);
+                }
+                else if (!westernRegion.IsInfected())
+                {
+                    InfectRegion(3);
+                }
+                else
+                {
+                    InfectRegion(4);
+                }
+                timeSinceInfectionSpread = 0;
             }
+        }
+        else
+        {
+            timeSinceInfectionSpread += Time.deltaTime;
+        }
+
+        if (northernRegion.IsInfected() && centralRegion.IsInfected() && westernRegion.IsInfected() && southernRegion.IsInfected())
+        {
+            allRegionsInfected = true;
         }
     }
 
@@ -145,9 +174,15 @@ public class Infection : MonoBehaviour
         return infectionSpeed;
     }
 
-    //spread upgrades call this 
+    //infection upgrades call this 
     public void IncreaseInfectionSpeed(int power)
     {
         infectionSpeed += (float)power * .15f;
+    }
+
+    //spread upgrades call this 
+    public void IncreaseSpreadSpeed(int power)
+    {
+        spreadSpeed += (float)power * .001f;
     }
 }

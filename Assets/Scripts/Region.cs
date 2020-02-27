@@ -117,11 +117,7 @@ public class Region : MonoBehaviour
             timeSinceUpdated = 0;
             //get percent of region infected. This is used to change color 
             percentInfected = (float)numTreesInfected / numTreesTotal;
-
-            //debug messages for testing
-            Debug.Log(numTreesInfected.ToString());
-            Debug.Log(percentInfected.ToString());
-
+            
             //update counter 
             UpdateCounter();
 
