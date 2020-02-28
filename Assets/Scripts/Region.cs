@@ -9,6 +9,7 @@ public class Region : MonoBehaviour
 
     //bool variables to track what points have been given. 
     //each region gives 3 points. 1/2 infected, 3/4 infected, and entirely infected 
+    //also controls counter measures 
     bool firstPoint = false;
     bool secondPoint = false;
     bool thirdPoint = false;
@@ -26,6 +27,7 @@ public class Region : MonoBehaviour
 
     //initialize variables
     bool infected = false;
+    bool allTreesInfected = false;
     [SerializeField] int numTreesTotal = 1500000;
     float numTreesInfected = 0;
 
@@ -77,16 +79,19 @@ public class Region : MonoBehaviour
         {
             upgrades.AddUpgradePoint();
             firstPoint = true;
+            CounterMeasures(1);
         }
         else if (numTreesInfected > numTreesTotal / 3 && !secondPoint)
         {
             upgrades.AddUpgradePoint();
             secondPoint = true;
+            CounterMeasures(2);
         }
         else if (numTreesInfected == numTreesTotal && !thirdPoint)
         {
             upgrades.AddUpgradePoint();
             thirdPoint = true;
+            allTreesInfected = true;
         }
     }
 
@@ -148,4 +153,17 @@ public class Region : MonoBehaviour
     {
         return infected;
     }
+
+    public bool IsAllInfected()
+    {
+        return allTreesInfected;
+    }
+
+    private void CounterMeasures(int power)
+    {
+        numTreesInfected = numTreesInfected / (power + 1);
+    }
+
+
+
 }

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using beetle.SceneManagement;
 
 public class Infection : MonoBehaviour
@@ -17,7 +18,7 @@ public class Infection : MonoBehaviour
 
     //int variable keeping track of the starting region 
     int startingRegion = 0;
-    
+
     //layers of ui, used to enable / disable 
     [SerializeField] GameObject startingRegionButtons;
     [SerializeField] GameObject infectionCounters;
@@ -44,6 +45,8 @@ public class Infection : MonoBehaviour
     //starts at 0, increase with upgrades
     [Range(0, .1f)] [SerializeField] float spreadSpeed = 0;
 
+    int currentSceneIndex;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -55,6 +58,8 @@ public class Infection : MonoBehaviour
 
         //start time between updates at 3
         timeBetweenUpdates = 3f;
+
+        currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
     }
 
     // Update is called once per frame
@@ -95,6 +100,12 @@ public class Infection : MonoBehaviour
         if (northernRegion.IsInfected() && centralRegion.IsInfected() && westernRegion.IsInfected() && southernRegion.IsInfected())
         {
             allRegionsInfected = true;
+        }
+
+
+        if (northernRegion.IsAllInfected() && centralRegion.IsAllInfected() && westernRegion.IsAllInfected() && southernRegion.IsAllInfected())
+        {
+            SceneManager.LoadScene(currentSceneIndex + 1);
         }
     }
 
