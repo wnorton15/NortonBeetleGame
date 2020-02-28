@@ -31,7 +31,7 @@ public class Infection : MonoBehaviour
 
     //time between infection updates 
     [Range(1, 5)] [SerializeField] float timeBetweenUpdates;
-    float timeBetweenInfectionSpread = 10f;
+    float timeBetweenInfectionSpread = 25f;
     float timeSinceInfectionSpread = Mathf.Infinity;
 
     //infection speed between -1 & 1
@@ -183,6 +183,6 @@ public class Infection : MonoBehaviour
     //spread upgrades call this 
     public void IncreaseSpreadSpeed(int power)
     {
-        spreadSpeed += (float)power * .001f;
+        spreadSpeed += (float)power * .0005f;
     }
 }
