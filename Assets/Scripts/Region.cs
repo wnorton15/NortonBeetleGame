@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -40,6 +41,9 @@ public class Region : MonoBehaviour
     float percentInfected = 0;
     float colorPercent = 1;
 
+    //news report text. Used to let the player know about counter measures 
+    [SerializeField] UnityEngine.UI.Text newsReportText;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -75,13 +79,14 @@ public class Region : MonoBehaviour
     private void CheckForUpgradePoint()
     {
         //each point can only be given once 
-        if (numTreesInfected > numTreesTotal / 2 && !firstPoint)
+        if (numTreesInfected > numTreesTotal / 3 && !firstPoint)
         {
             upgrades.AddUpgradePoint();
             firstPoint = true;
             CounterMeasures(1);
+            UpdateNewsReport(1, idnum);
         }
-        else if (numTreesInfected > numTreesTotal / 3 && !secondPoint)
+        else if (numTreesInfected > numTreesTotal / 2 && !secondPoint)
         {
             upgrades.AddUpgradePoint();
             secondPoint = true;
@@ -92,7 +97,13 @@ public class Region : MonoBehaviour
             upgrades.AddUpgradePoint();
             thirdPoint = true;
             allTreesInfected = true;
+            CounterMeasures(0);
         }
+    }
+
+    private void UpdateNewsReport(int v, int idnum)
+    {
+        newsReportText.text = "abc";
     }
 
     private void UpdateInfection()
@@ -161,9 +172,11 @@ public class Region : MonoBehaviour
 
     private void CounterMeasures(int power)
     {
+        //lower number of trees infected 
         numTreesInfected = numTreesInfected / (power + 1);
+        //temporarily stop the infection  
+        timeSinceUpdated = -10f;
+        //slow the infection speed
+        infection.SlowInfectionSpeed();
     }
-
-
-
 }

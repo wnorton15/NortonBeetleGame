@@ -197,4 +197,10 @@ public class Infection : MonoBehaviour
     {
         spreadSpeed += (float)power * .0005f;
     }
+
+    //slows the infection. Called from the counter measures 
+    public void SlowInfectionSpeed()
+    {
+        infectionSpeed -= .03f;
+    }
 }
