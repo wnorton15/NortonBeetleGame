@@ -91,6 +91,7 @@ public class Region : MonoBehaviour
             upgrades.AddUpgradePoint();
             secondPoint = true;
             CounterMeasures(2);
+            UpdateNewsReport(2, idnum);
         }
         else if (numTreesInfected == numTreesTotal && !thirdPoint)
         {
@@ -98,12 +99,90 @@ public class Region : MonoBehaviour
             thirdPoint = true;
             allTreesInfected = true;
             CounterMeasures(0);
+            UpdateNewsReport(3, idnum);
         }
     }
 
-    private void UpdateNewsReport(int v, int idnum)
+    private void UpdateNewsReport(int counterMeasureNum, int idnum)
     {
-        newsReportText.text = "abc";
+        switch (idnum)
+        {
+            case 1:
+                if (counterMeasureNum == 1)
+                {
+                    newsReportText.text = "Northern Region is 1/3 infected, scientists have started treating trees.";
+                }
+                else if (counterMeasureNum == 2)
+                {
+                    newsReportText.text = "Northern Region is 1/2 infected, scientists have started spraying pesticide.";
+                }
+                else if (counterMeasureNum == 3)
+                {
+                    newsReportText.text = "Northern Region trees have all been infected. Scientists have given up.";
+                }
+                else
+                {
+                    newsReportText.text = "";
+                }
+                break;
+            case 2:
+                if (counterMeasureNum == 1)
+                {
+                    newsReportText.text = "Central Region is 1/3 infected, scientists have started treating trees.";
+                }
+                else if (counterMeasureNum == 2)
+                {
+                    newsReportText.text = "Central Region is 1/2 infected, scientists have started spraying pesticide.";
+                }
+                else if (counterMeasureNum == 3)
+                {
+                    newsReportText.text = "Central Region trees have all been infected. Scientists have given up.";
+                }
+                else
+                {
+                    newsReportText.text = "";
+                }
+                break;
+            case 3:
+                if (counterMeasureNum == 1)
+                {
+                    newsReportText.text = "Western Region is 1/3 infected, scientists have started treating trees.";
+                }
+                else if (counterMeasureNum == 2)
+                {
+                    newsReportText.text = "Western Region is 1/2 infected, scientists have started spraying pesticide.";
+                }
+                else if (counterMeasureNum == 3)
+                {
+                    newsReportText.text = "Western Region trees have all been infected. Scientists have given up.";
+                }
+                else
+                {
+                    newsReportText.text = "";
+                }
+                break;
+            case 4:
+                if (counterMeasureNum == 1)
+                {
+                    newsReportText.text = "Southern Region is 1/3 infected, scientists have started treating trees.";
+                }
+                else if (counterMeasureNum == 2)
+                {
+                    newsReportText.text = "Southern Region is 1/2 infected, scientists have started spraying pesticide.";
+                }
+                else if (counterMeasureNum == 3)
+                {
+                    newsReportText.text = "Southern Region trees have all been infected. Scientists have given up.";
+                }
+                else
+                {
+                    newsReportText.text = "";
+                }
+                break;
+            default:
+                newsReportText.text = "";
+                break;
+        }
     }
 
     private void UpdateInfection()

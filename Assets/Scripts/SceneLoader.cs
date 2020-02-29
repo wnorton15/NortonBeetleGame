@@ -16,6 +16,11 @@ namespace beetle.SceneManagement
             SceneManager.LoadScene(currentSceneIndex + 1);
         }
 
+        public void LoadFirstScene()
+        {
+            SceneManager.LoadScene(0);
+        }
+
         //function to quit the game
         public void quitGame()
         {
