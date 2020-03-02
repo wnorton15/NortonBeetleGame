@@ -45,6 +45,9 @@ public class Infection : MonoBehaviour
     //starts at 0, increase with upgrades
     [Range(0, .1f)] [SerializeField] float spreadSpeed = 0;
 
+    //resistance starts at 0, when increased it decreases the effectiveness of counter measures 
+    [Range(0, 1f)] [SerializeField] float resistance = 0;
+
     int currentSceneIndex;
 
     // Start is called before the first frame update
@@ -201,6 +204,12 @@ public class Infection : MonoBehaviour
     //slows the infection. Called from the counter measures 
     public void SlowInfectionSpeed()
     {
-        infectionSpeed -= .03f;
+        infectionSpeed -= ( 1 - resistance) * .15f; ;
+    }
+
+    //increases resistance 
+    public void increaseResistance(int power)
+    {
+        resistance += (float)power * .15f;
     }
 }

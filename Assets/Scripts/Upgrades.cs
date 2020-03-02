@@ -76,6 +76,7 @@ public class Upgrades : MonoBehaviour
                         infection.IncreaseInfectionSpeed(upgradeInfo[i].GetPower());
                         break;
                     case UpgradeEffects.resistance:
+                        infection.increaseResistance(upgradeInfo[i].GetPower());
                         break;
                     default:
                         break;
